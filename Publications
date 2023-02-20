@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>John Smith - Economist Researcher</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>John Smith</h1>
+      <h2>Economist Researcher</h2>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      
+      <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+          <li>Smith, J. (2022). "Economic Development and Growth: A Review of the Literature." Journal of Economic Literature, 60(1), 1-35.</li>
+          <li>Smith, J. and Lee, Y. (2021). "Foreign Aid and Economic Growth: A Panel Data Analysis." Journal of Development Economics, 149, 102590.</li>
+          <li>Smith, J. and Wang, L. (2020). "The Effects of Education on Economic Development: Evidence from China." Journal of Human Capital, 14(2), 227-261.</li>
+        </ul>
+      </section>
+      
+    <footer>
+      <p>&copy; 2023 John Smith</p>
+    </footer>
+  </body>
+</html>
