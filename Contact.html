@@ -4,57 +4,6 @@
     <meta charset="UTF-8">
     <title>Lakhchen Faïçal - Researcher (Macroeconomist)</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    // Function to fetch data from the World Bank API
-    function fetchData() {
-      // Set the API URL and parameters
-      var url = 'https://api.worldbank.org/v2/countries/all/indicators/NY.GDP.MKTP.CD';
-      var params = {
-        format: 'json',
-        per_page: 50,
-        date: '2010:2019'
-      };
-      
-      // Send a GET request to the API and handle the response
-      $.getJSON(url, params, function(data) {
-        // Extract the data series from the response
-        var series = data[1];
-        
-        // Create an array of data points for the chart
-        var chartData = series.map(function(d) {
-          return {
-            x: parseInt(d.date),
-            y: parseInt(d.value)
-          };
-        });
-        
-        // Create a chart using Chart.js library
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            datasets: [{
-              label: 'GDP',
-              data: chartData,
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              xAxes: [{
-                type: 'linear',
-                position: 'bottom'
-              }]
-            }
-          }
-        });
-      });
-    }
-  </script>
   </head>
   <body>
     <header>
@@ -76,9 +25,6 @@
         <h2>Contact</h2>
         <p>If you would like to contact me, please email me at <a href="f.lakhchen@edu.uiz.ac.ma">f.lakhchen@edu.uiz.ac.ma</a>.</p>
       </section>
-      <body onload="fetchData()">
-       <h1>World Bank Data Chart</h1>
-       <canvas id="myChart"></canvas>
 
     </main>
     
