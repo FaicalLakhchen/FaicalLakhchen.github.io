@@ -2,60 +2,66 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>World Bank Data Chart</title>
+  <title>IMF Data Chart</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    // Function to fetch data from the World Bank API
+    // Function to fetch data from the IMF API
     function fetchData() {
       // Set the API URL and parameters
-      var url = 'https://api.worldbank.org/v2/countries/all/indicators/NY.GDP.MKTP.CD';
+      var url = 'https://api.imf.org/v1/datasets/GDP@US';
       var params = {
-        format: 'json',
-        per_page: 50,
-        date: '2010:2019'
+        start: '1980',
+        end: '2022',
+        frequency: 'A'
       };
       
       // Send a GET request to the API and handle the response
-      $.getJSON(url, params, function(data) {
-        // Extract the data series from the response
-        var series = data[1];
-        
-        // Create an array of data points for the chart
-        var chartData = series.map(function(d) {
-          return {
-            x: parseInt(d.date),
-            y: parseInt(d.value)
-          };
-        });
-        
-        // Create a chart using Chart.js library
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            datasets: [{
-              label: 'GDP',
-              data: chartData,
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              xAxes: [{
-                type: 'linear',
-                position: 'bottom'
+      $.ajax({
+        url: url,
+        data: params,
+        headers: { 'Accept': 'application/json' },
+        success: function(response) {
+          // Extract the data series from the response
+          var series = response.data.dataSets[0].series.GDPCA_PC1_con[0].observations;
+          
+          // Create an array of data points for the chart
+          var chartData = series.map(function(d) {
+            return {
+              x: parseInt(d[0]),
+              y: parseFloat(d[1])
+            };
+          });
+          
+          // Create a chart using Chart.js library
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              datasets: [{
+                label: 'GDP',
+                data: chartData,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
               }]
+            },
+            options: {
+              scales: {
+                xAxes: [{
+                  type: 'linear',
+                  position: 'bottom'
+                }]
+              }
             }
-          }
-        });
+          });
+        }
       });
     }
   </script>
 </head>
 <body onload="fetchData()">
-  <h1>World Bank Data Chart</h1>
+  <h1>IMF Data Chart</h1>
   <canvas id="myChart"></canvas>
 </body>
 </html>
+
