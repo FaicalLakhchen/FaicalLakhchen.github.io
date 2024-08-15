@@ -1,30 +1,35 @@
+/* General Settings */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f7f8fa;
+    color: #2c3e50;
+    line-height: 1.7;
 }
 
+/* Header Styling */
 header {
-    background-color: #333;
+    background-color: #34495e;
     color: white;
     padding: 20px 0;
 }
 
 header h1 {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 2.5em;
 }
 
 header h2 {
-    margin: 0;
-    font-size: 1.2em;
+    margin: 5px 0 0;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    font-size: 1.2em;
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 nav ul {
@@ -35,42 +40,47 @@ nav ul {
 }
 
 nav li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ecf0f1;
 }
 
+/* Container and Layout */
 .container {
-    width: 85%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Main Content */
 main {
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.8em;
+    color: #34495e;
     margin-bottom: 20px;
-    color: #444;
 }
 
 .about-content {
     display: flex;
     align-items: flex-start;
+    gap: 20px;
 }
 
 .profile-img {
@@ -78,31 +88,37 @@ h2 {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin-right: 20px;
-    border: 2px solid #ddd;
+    border: 3px solid #bdc3c7;
 }
 
-ul {
-    padding-left: 20px;
-    list-style: none;
+.bio {
+    max-width: 800px;
 }
 
-ul li {
-    background: #e9ecef;
-    margin: 5px 0;
-    padding: 10px;
+/* Teaching Section */
+.teaching-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.teaching-list li {
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Footer */
 footer {
-    background-color: #333;
+    background-color: #34495e;
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
-    font-size: 0.9em;
 }
 
 footer p {
     margin: 0;
+    font-size: 0.9em;
 }
