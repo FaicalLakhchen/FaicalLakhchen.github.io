@@ -1,61 +1,108 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 nav {
-  background-color: #444;
-  color: white;
-  padding: 10px;
+    margin-top: 10px;
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav li {
-  margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 main {
-  padding: 20px;
+    padding: 20px 0;
 }
 
 section {
-  margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 h2 {
-  color: #333;
-  font-size: 1.5em;
-  margin-bottom: 10px;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #444;
 }
 
-p {
-  line-height: 1.5;
+.about-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+}
+
+ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+ul li {
+    background: #e9ecef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 footer {
-  background-color: #eee;
-  color: #333;
-  padding: 10px;
-  text-align: center;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
 }
 
-
+footer p {
+    margin: 0;
+}
